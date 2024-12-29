@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Manager Frontend
 
-## Getting Started
+Aplicación de gestión de tareas desarrollada con Next.js, TypeScript, PrimeReact y Zustand.
 
-First, run the development server:
+## 🚀 Características
 
+- CRUD completo de tareas
+- Filtrado y búsqueda en tiempo real
+- Paginación
+- Ordenamiento de columnas
+- Notificaciones y diálogos de confirmación
+- Diseño responsive
+- Estado de tareas (completadas/pendientes)
+
+## 🛠️ Tecnologías
+
+- Next.js 14.0.3
+- React 18.2.0
+- TypeScript
+- PrimeReact 10.8.5
+- Zustand (manejo de estado)
+- TailwindCSS
+
+## 📋 Prerrequisitos
+
+- Node.js 18.x o superior
+- npm o yarn
+
+## 🔧 Instalación
+
+1. Clona el repositorio:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/JUNIORCEDE/task-manager-frontend.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Crea un archivo `.env.local` en la raíz del proyecto:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-## Learn More
+La aplicación estará disponible en `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## 🗂️ Estructura del Proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+  ├── app/
+  │   ├── layout.tsx
+  │   ├── page.tsx
+  │   └── globals.css
+  ├── components/
+  │   ├── taskList.tsx
+  │   └── taskDialog.tsx
+  ├── providers/
+  │   └── confirmProvider.tsx
+  ├── store/
+  │   └── useTaskStore.ts
+  └── types/
+      └── task.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🚢 Despliegue
 
-## Deploy on Vercel
+Para construir la aplicación para producción:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Para iniciar la versión de producción:
+
+```bash
+npm start
+```
+
+## 🔍 Variables de Entorno
+
+- `NEXT_PUBLIC_API_URL`: URL base de la API
+
+## 📦 Scripts Disponibles
+
+- `npm run dev`: Inicia el servidor de desarrollo
+- `npm run build`: Construye la aplicación para producción
+- `npm start`: Inicia la aplicación en modo producción
+- `npm run lint`: Ejecuta el linter
+
+## 🤝 Contribuir
+
+1. Haz un Fork del proyecto
+2. Crea una rama para tu característica (`git checkout -b feature/AmazingFeature`)
+3. Haz commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## ⚙️ Configuración del Backend
+
+Esta aplicación frontend está diseñada para trabajar con una API REST que debe proporcionar los siguientes endpoints:
+
+```
+GET    /api/tasks         - Obtener todas las tareas
+POST   /api/tasks         - Crear una nueva tarea
+PUT    /api/tasks/:id     - Actualizar una tarea
+DELETE /api/tasks/:id     - Eliminar una tarea
+```
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
+
+## ✨ Características Adicionales
+
+- Filtrado global y por columnas
+- Toasts para notificaciones
+- Diálogos de confirmación
+- Diseño responsivo
+- Validación de formularios
+
+## 🎨 Personalización
+
+El proyecto utiliza PrimeReact para los componentes UI y TailwindCSS para estilos adicionales. Puedes personalizar el tema modificando:
+
+- El tema de PrimeReact en `layout.tsx`
+- Los estilos de Tailwind en `tailwind.config.js`
+- Estilos globales en `globals.css`
